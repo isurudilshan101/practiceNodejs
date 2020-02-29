@@ -7,5 +7,5 @@ app.get("/",function(request,responce){
     responce.sendFile('home.html',{root:__dirname});
 });
 app.listen(5000,function(){
-    console.log("srecer is up");
+    console.log("server done");
 });
