@@ -13,20 +13,24 @@ app.use(sessions({
 app.get('/',function(req,res){
     session=req.session;
     if(session.userid){
-        res.send("Welcome admin <a href=\>"); 
+        res.send("Welcome admin <a href=\'logout'>click to logout</a>"); 
    
     }
     else 
     res.sendFile('login.html',{root:__dirname});
 });
 
+app.get('/logout',function(req,res){
+    req.session.destroy();
+    res.redirect('/');
+});
 app.post('/login',function(req,res){
 
     if(req.body.username=='admin' && req.body.password=='admin')
     {
         session=req.session;
         session.userid=req.body.username;
-    res.end("Welcome admin"); 
+        res.send("Welcome admin <a href=\'logout'>click to logout</a>"); 
    
     }
     else
