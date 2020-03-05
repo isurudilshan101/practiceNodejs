@@ -5,5 +5,5 @@ app.get('/',function(req,res){
 
 });
 app.listen(4000,function(){
-    console.log('listing to prt 3000');
+    console.log('listing to port 3000');
 });
