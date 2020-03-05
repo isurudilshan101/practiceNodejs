@@ -2,7 +2,7 @@
     <head>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
         <center>
@@ -21,6 +21,7 @@
                     <td>{{this.Fname}}</td>
                     <td>{{this.Lname}}</td>
                     <td>{{this.Tel}}</td>
+                    <td><button class="btn-danger btn">Delete</button></td>
 
 
                 </tr>
@@ -30,3 +31,18 @@
         </center>
     </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>    
+    $('.btn').click(function(){
+        var ino=$(this).parent().parent().children().first().html();
+        alert(ino);
+        $.ajex({
+            type:'post',
+            url:'/deleteuser',
+            data:{IndexNo:ino},
+            success:function(data){
+
+            }
+        })
+    });  
+</script>
