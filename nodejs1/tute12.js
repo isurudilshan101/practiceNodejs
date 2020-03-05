@@ -1,9 +1,24 @@
 var express=require('express');
-car app=express();
+var app=express();
 var mysql=require('mysql'); 
 app.get('/',function(req,res){
+    var con=mysql.createConnection({
+        host:'localhost',
+        user:'root',
+        password:'',
+        database:'test1'
+    
+    });
+
+    con.query("SELECT * FROM student1",function(err,result){
+        if(err) throw err;
+        console.log(result);
+    });
 
 });
-app.listen(4000,function(){
-    console.log('listing to port 3000');
+
+
+
+app.listen(5000,function(){
+    console.log('listing to port 5000');
 });
