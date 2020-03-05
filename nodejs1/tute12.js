@@ -6,7 +6,7 @@ app.get('/',function(req,res){
         host:'localhost',
         user:'root',
         password:'',
-        database:'test1'
+        database:'test'
     
     });
 
