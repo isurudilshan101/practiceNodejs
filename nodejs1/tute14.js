@@ -28,7 +28,7 @@ app.post('/deleteuser',function(req,res){
     con.query("DELETE FROM student1 WHERE IndexNO="+ino+";",function(err,result){
         if(err) throw err;
         console.log(err);
-    })
+    });
 });
 
 app.listen(5000,function(){
