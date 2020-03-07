@@ -35,14 +35,14 @@
 <script>    
     $('.btn').click(function(){
         var ino=$(this).parent().parent().children().first().html();
-        alert(ino);
-        $.ajex({
+        //alert(ino);
+        $.ajax({
             type:'post',
             url:'/deleteuser',
             data:{IndexNo:ino},
             success:function(data){
                     
             }
-        })
+        });
     });  
 </script>
